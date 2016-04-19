@@ -1,13 +1,10 @@
 FROM mesosphere/mesos:0.26.0-0.2.145.ubuntu1404
 
-RUN apt-get update && \
-    apt-get install -y software-properties-common
-RUN add-apt-repository ppa:openjdk-r/ppa
-RUN apt-get update && \
-    apt-get install --yes \
-    openjdk-8-jdk\
-    wget \
-    tar
+RUN apt-get update \
+  && apt-get install -y software-properties-common \
+  && add-apt-repository ppa:openjdk-r/ppa \
+  && apt-get update \
+  && apt-get install --yes openjdk-8-jdk wget tar
 
 # hadoop config
 ENV HADOOP_CONF_DIR /etc/hadoop
@@ -20,9 +17,9 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 RUN update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 # zeppelin
-RUN wget http://apache.arvixe.com/incubator/zeppelin/0.5.6-incubating/zeppelin-0.5.6-incubating-bin-all.tgz
-RUN tar xzvf zeppelin-0.5.6-incubating-bin-all.tgz
-WORKDIR /zeppelin-0.5.6-incubating-bin-all
+RUN wget -q https://s3.amazonaws.com/downloads.mesosphere.io/zeppelin/assets/zeppelin-0.6.0-incubating-SNAPSHOT.tar.gz \
+  && tar xf zeppelin-*.tar.gz && rm zeppelin-*.tar.gz
+WORKDIR /zeppelin-0.6.0-incubating-SNAPSHOT
 ADD zeppelin-env.sh conf/zeppelin-env.sh
 
 CMD ["bin/zeppelin.sh", "start"]
