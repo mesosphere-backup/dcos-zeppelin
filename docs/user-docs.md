@@ -22,29 +22,7 @@ sockets, rather than HTTP.  On AWS DC/OS 1.7, the ELB to which
 Zeppelin to work properly, you must downgrade the ELB port 80 proxy to
 TCP.
 
-## Access Zeppelin from a public agent
- 
-Use the marathon-lb DC/OS service to make Zeppelin accessible from a public agent.
-
-1. From the DC/OS web interface, click the **Universe** tab, choose **marathon-lb**, and click **Install**.
-
-Alternatively, you can install marathon-lb from the DC/OS CLI:
-
-```bash
-$ dcos package install marathon-lb
-```
-
-1. Add the following parameter to the Marathon application that will interact with Zeppelin:
-
-```json
-{
-     "labels": {
-       "HAPROXY_0_VHOST": "<public-agent-hostname>"
-     }
-   }
-```
-
-When you launch the Marathon application, you should be able to access Zeppelin at `https://<dcos_url>/service/zeppelin/`, where `dcos_url` is the address of the DC/OS web interface for your cluster.
+If you wish to access Zeppelin from a public agent, you can install marathon-lb on a public agent, then launch Zeppelin with a label for discovery by marathon-lb, [as described here](1.7/usage/service-discovery/marathon-lb/usage/).
 
 <!-- 
 Alternately, you can deploy Zeppelin on a public agent by setting the
