@@ -22,7 +22,7 @@ sockets, rather than HTTP.  On AWS DC/OS 1.7, the ELB to which
 Zeppelin to work properly, you must downgrade the ELB port 80 proxy to
 TCP.
 
-On DC/OS 1.7 and below, you can access Zeppelin from the public internet by using marathon-lb [as described here](1.7/usage/service-discovery/marathon-lb/usage/).
+On DC/OS >1.7, you can access Zeppelin from the public internet by using marathon-lb [as described here](1.7/usage/service-discovery/marathon-lb/usage/).
 
 <!-- 
 Alternately, you can deploy Zeppelin on a public agent by setting the
