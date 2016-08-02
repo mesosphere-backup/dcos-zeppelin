@@ -34,7 +34,8 @@
                 },
                 "executor_memory": {
                     "type": "string",
-                    "description": "Sets spark.executor.memory"
+                    "description": "Sets spark.executor.memory",
+                    "default": "4g"
                 }
             }
         }
