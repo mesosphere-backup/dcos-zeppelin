@@ -20,9 +20,18 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 RUN update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 # zeppelin
-RUN wget http://apache.arvixe.com/incubator/zeppelin/0.5.6-incubating/zeppelin-0.5.6-incubating-bin-all.tgz
-RUN tar xzvf zeppelin-0.5.6-incubating-bin-all.tgz
-WORKDIR /zeppelin-0.5.6-incubating-bin-all
+RUN wget http://mirror.serversupportforum.de/apache/zeppelin/zeppelin-0.6.0/zeppelin-0.6.0-bin-all.tgz
+RUN tar xzvf zeppelin-0.6.0-bin-all.tgz
+WORKDIR /zeppelin-0.6.0-bin-all
 ADD zeppelin-env.sh conf/zeppelin-env.sh
+
+# add our user and group first to make sure their IDs get assigned consistently
+RUN groupadd -r zeppelin && useradd -r -m -g zeppelin zeppelin
+
+RUN \
+	chown -R zeppelin:zeppelin /zeppelin-0.6.0-bin-all && \
+    chown -R zeppelin:zeppelin /etc/hadoop
+
+USER zeppelin
 
 CMD ["bin/zeppelin.sh", "start"]
