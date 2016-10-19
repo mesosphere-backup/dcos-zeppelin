@@ -5,6 +5,7 @@ This is the docker build for Zeppelin on DCOS.
 ## Building
 
 ```sh
+cd docker
 docker build -t mesosphere/zeppelin:<version> .
 ```
 
