@@ -1,4 +1,4 @@
-FROM mesosphere/mesos:0.26.0-0.2.145.ubuntu1404
+FROM mesosphere/mesos:1.0.11.0.1-2.0.93.ubuntu1404
 
 RUN apt-get update && \
     apt-get install -y software-properties-common
@@ -20,9 +20,9 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 RUN update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 # zeppelin
-RUN wget http://apache.arvixe.com/incubator/zeppelin/0.5.6-incubating/zeppelin-0.5.6-incubating-bin-all.tgz
-RUN tar xzvf zeppelin-0.5.6-incubating-bin-all.tgz
-WORKDIR /zeppelin-0.5.6-incubating-bin-all
+RUN wget http://www.apache.org/dist/zeppelin/zeppelin-0.6.1/zeppelin-0.6.1-bin-all.tgz
+RUN tar xzvf zeppelin-0.6.1-bin-all.tgz
+WORKDIR /zeppelin-0.6.1-bin-all
 ADD zeppelin-env.sh conf/zeppelin-env.sh
 
 CMD ["bin/zeppelin.sh", "start"]

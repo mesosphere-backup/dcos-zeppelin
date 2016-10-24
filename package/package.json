@@ -1,7 +1,7 @@
 {
     "packagingVersion": "2.0",
     "name": "zeppelin",
-    "version": "0.5.6",
+    "version": "0.6.1",
     "scm": "https://github.com/apache/incubator-zeppelin",
     "maintainer": "support@mesosphere.io",
     "description": "Zeppelin is a web-based notebook that enables interactive data analytics",
