@@ -7,7 +7,7 @@
   "assets": {
     "container": {
       "docker": {
-        "zeppelin": "mesosphere/zeppelin:0.6.1",
+        "zeppelin": "mesosphere/zeppelin:0.6.2",
         "spark": "mesosphere/spark:1.0.2-2.0.0"
       }
     },
