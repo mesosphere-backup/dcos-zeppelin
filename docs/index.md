@@ -1,7 +1,7 @@
 ---
 post_title: Zeppelin
 menu_order: 130
-enterprise: 'yes'
+enterprise: 'no'
 ---
 
 DC/OS Apache Zeppelin Service is an interactive analytics notebook compatible with

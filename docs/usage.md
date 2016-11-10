@@ -1,7 +1,7 @@
 ---
 post_title: Usage
 menu_order: 10
-enterprise: 'yes'
+enterprise: 'no'
 ---
 
 # Spark

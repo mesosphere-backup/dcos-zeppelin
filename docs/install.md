@@ -1,7 +1,7 @@
 ---
 post_title: Install
 menu_order: 0
-enterprise: 'yes'
+enterprise: 'no'
 ---
 
 Use the following command from the DC/OS CLI to install Zeppelin:
