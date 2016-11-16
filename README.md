@@ -1,6 +1,10 @@
 # zeppelin-docker
 
-This is the docker build for Zeppelin on DCOS.
+This is the docker build for Zeppelin on DC/OS.
+
+## Documentation
+
+All [DC/OS Zeppelin documentation](docs/table-of-contents.md) is in the `docs` folder of this repository.
 
 ## Building
 
@@ -11,10 +15,10 @@ docker build -t mesosphere/zeppelin:<version> .
 
 ## Installing
 
-These are instructions for installing and accessing the DCOS Zeppelin
+These are instructions for installing and accessing the DC/OS Zeppelin
 package.  We'll probably move these to user docs at some point.
 
-The following are instructions for installing Zeppelin on an AWS DCOS
+The following are instructions for installing Zeppelin on an AWS DC/OS
 cluster such that you can access it from the public internet using
 marathon-lb as a proxy.  An alternative is to launch Zeppelin directly
 on a a public slave.
