@@ -2,6 +2,6 @@
 
 ## Table of Contents
 
-- [Overview](overview.md)
+- [Overview](index.md)
 - [Installation](install.md)
 - [Usage](usage.md)
